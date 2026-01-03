@@ -12,8 +12,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # --- Harbor Source Projects to Check ---
-SOURCE_REGISTRY = os.getenv("SOURCE_REGISTRY", "registry.cloudsolutions.com.sa")
-SOURCE_PROJECTS = os.getenv("SOURCE_PROJECTS", "vida-prod,vida-qa,vida-uat").split(",")
+SOURCE_REGISTRY = os.getenv("SOURCE_REGISTRY", "ENTER YOUR LOCAL HARBOR HERE")
+SOURCE_PROJECTS = os.getenv("SOURCE_PROJECTS", "ENTER YOU PROJECT NAMES SEPERATED BY COMMA").split(",")
 # --------------------------------------
 
 # -----------------------------
@@ -49,8 +49,8 @@ envs_frame = tk.Frame(root)
 envs_frame.pack(pady=5)
 
 env_options = [
-    "1) S1", "2) S2", "3) S3", "4) KKUH",
-    "5) KAUH", "6) KFSH", "7) CSPROD", "8) R3"
+    "1) env name1", "2) env name2", "3) env name3", "4) env name4",
+    "5) env name5", "6) env name6", "7) env name7", "8) env name8"
 ]
 env_vars = []
 for opt in env_options:
@@ -114,7 +114,7 @@ def is_image_available(full_image_path):
     return result.returncode == 0
 
 def find_image_in_projects(repo, tag, user, passwd):
-    """Checks vida-prod, vida-qa, then vida-uat for the image."""
+    """Checks project1, project2, project3 for the image."""
     log_message(f"Checking existence for {repo}:{tag} in {SOURCE_PROJECTS}...", "purple")
     
     # Perform a single login before checking all projects
@@ -225,7 +225,7 @@ def replicate():
              src_repo = match.group(1)
         else:
             # Fallback (shouldn't happen if find_image_in_projects works)
-            src_repo = "vida-prod" # Default to vida-prod if extraction fails.
+            src_repo = "project1" # Default to project1 if extraction fails.
 
 
         # --- Proceed with replication using the found source path ---
