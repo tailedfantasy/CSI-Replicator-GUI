@@ -1,11 +1,11 @@
 # CSI Replicator GUI
 
-A Python-based GUI tool to replicate Docker images between Harbor registries (e.g., from PROD/QA/UAT to various site-specific registries) using `skopeo`.
+A Python-based GUI tool to replicate Docker images between Harbor registries (e.g., from multiple projects to various site-specific registries) using `skopeo`.
 
 ## Features
 - 🖥️ **User Friendly GUI**: Select environments and input tags easily.
 - 🚀 **Multi-Environment Support**: Replicate to multiple destinations simultaneously.
-- 🔍 **Smart Source Detection**: Automatically checks `vida-prod`, `vida-qa`, and `vida-uat` to find the source image.
+- 🔍 **Smart Source Detection**: Automatically checks multiple projects to find the source image.
 - 🔒 **Secure**: Configuration and credentials are loaded from environment variables.
 
 ## Prerequisites
