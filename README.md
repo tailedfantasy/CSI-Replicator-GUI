@@ -1,4 +1,4 @@
-# CSI Replicator GUI
+#  Replicator GUI
 
 A Python-based GUI tool to replicate Docker images between Harbor registries (e.g., from multiple projects to various site-specific registries) using `skopeo`.this developed for instances where you have access to replicate through skopeo but no direct access authentication to foreighn harbors. 
 
